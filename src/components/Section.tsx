@@ -1,5 +1,7 @@
+import Slide from "@mui/material/Slide"
+import { ReactNode } from "react"
 interface ISection {
-  children: React.ReactNode
+  children: ReactNode
   isLastSection?: boolean
 }
 

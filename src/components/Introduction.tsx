@@ -1,10 +1,13 @@
-import Menu from "./Menu"
 import Section from "./Section"
 
 interface IIntroduction {}
 
 const Introduction = ({}: IIntroduction): JSX.Element => {
-  return <Section>I am Developer</Section>
+  return (
+    <Section>
+      <div>I am Developer</div>
+    </Section>
+  )
 }
 
 export default Introduction
