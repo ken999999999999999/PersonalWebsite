@@ -1,17 +1,13 @@
 import { AppBar, Button, Toolbar, Typography } from "@mui/material"
 
-const pages = [
-  { link: "#introduction", title: "Who am I?" },
-  { link: "#skills", title: "Skills" },
-]
-
 interface IHeader {
   onPageClick: (link: string, index: number) => void
+  pages: { link: string; title: string }[]
 }
 
-const Header = ({ onPageClick }: IHeader): JSX.Element => {
+const Header = ({ onPageClick, pages }: IHeader): JSX.Element => {
   return (
-    <AppBar>
+    <AppBar color="secondary">
       <Toolbar>
         {pages.map((page, index) => (
           <Button

@@ -6,26 +6,31 @@ import { Container } from "@mui/material"
 import { useState } from "react"
 
 const Home = () => {
+  const pages = [
+    { link: "#introduction", title: "Who am I?" },
+    { link: "#skills", title: "Skills" },
+    { link: "#education", title: "Education" },
+    { link: "#experiences", title: "Experiences" },
+    { link: "#contact", title: "Contact" },
+  ]
+
   const [callback, setCallback] = useState({
     moveTo: (link: string, index: number) => {},
   })
 
   return (
     <>
-      <Header onPageClick={(link, index) => callback?.moveTo(link, index)} />
-      <Container maxWidth="lg">
+      <Header
+        onPageClick={(link, index) => callback?.moveTo(link, index)}
+        pages={pages}
+      />
+      <Container maxWidth="xl">
         <ReactFullpage
           credits={{}}
           navigation
-          anchors={[
-            "#introduction",
-            "#skills",
-            "#education",
-            "#experiences",
-            "#contact",
-          ]}
+          anchors={pages.map((page) => page.link)}
           scrollingSpeed={1000} /* Options here */
-          render={({ _, fullpageApi }) => {
+          render={({ fullpageApi }) => {
             setCallback(fullpageApi)
             return (
               <ReactFullpage.Wrapper>

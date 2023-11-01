@@ -5,10 +5,7 @@ interface ISection {
   isLastSection?: boolean
 }
 
-const Section = ({
-  children,
-  isLastSection = false,
-}: ISection): JSX.Element => {
+const Section = ({ children }: ISection): JSX.Element => {
   return <div className="section">{children}</div>
 }
 
