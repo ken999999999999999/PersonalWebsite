@@ -7,7 +7,7 @@ interface IHeader {
 
 const Header = ({ onPageClick, pages }: IHeader): JSX.Element => {
   return (
-    <AppBar color="secondary">
+    <AppBar>
       <Toolbar>
         {pages.map((page, index) => (
           <Button

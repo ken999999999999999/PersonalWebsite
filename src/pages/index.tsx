@@ -1,3 +1,6 @@
+import Contact from "@/components/Contact"
+import Education from "@/components/Education"
+import Experiences from "@/components/Experiences"
 import Header from "@/components/Header"
 import Introduction from "@/components/Introduction"
 import Skills from "@/components/Skills"
@@ -36,6 +39,9 @@ const Home = () => {
               <ReactFullpage.Wrapper>
                 <Introduction />
                 <Skills />
+                <Education />
+                <Experiences />
+                <Contact />
               </ReactFullpage.Wrapper>
             )
           }}

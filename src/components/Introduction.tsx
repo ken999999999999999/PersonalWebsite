@@ -13,10 +13,10 @@ const Introduction = ({}: IIntroduction): JSX.Element => {
     <Section>
       <Grid container>
         <Grid item sm={6} xs={12} pt={5}>
-          <Typography variant="h2" mb={3} gutterBottom>
+          <Typography variant="h2" mb={5} gutterBottom>
             Hi all, I am Ken
           </Typography>
-          <Typography variant="h4" paragraph>
+          <Typography variant="h4" paragraph style={{ fontWeight: "lighter" }}>
             With over 3 years of hands-on experience in ERP system development,
             I possess a strong understanding of both frontend and backend
             technologies, as well as their capabilities and limitations in
