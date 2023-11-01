@@ -1,28 +1,19 @@
 import { Fade, Grid, IconButton, Typography } from "@mui/material"
-import Section from "./Section"
 import Lottie from "lottie-react"
 import Wavehand from "@/assets/Wavehand.json"
 import GitHubIcon from "@mui/icons-material/GitHub"
 import LinkedInIcon from "@mui/icons-material/LinkedIn"
 import EmailIcon from "@mui/icons-material/Email"
+import Title from "./Title"
+import Section, { ICommonSection } from "./Section"
 
-interface IIntroduction {}
-
-const Introduction = ({}: IIntroduction): JSX.Element => {
+const Introduction = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
   return (
     <Section>
-      <Fade in timeout={1000}>
+      <Fade in={isCurrent} timeout={timeout}>
         <Grid container>
           <Grid item sm={6} xs={12} pt={5}>
-            <Typography
-              variant="h2"
-              mb={5}
-              gutterBottom
-              color="primary.main"
-              fontWeight="bold"
-            >
-              Hi all, I am Ken
-            </Typography>
+            <Title>Hi all, I am Ken</Title>
             <Typography
               variant="h4"
               paragraph

@@ -1,11 +1,7 @@
 import Section from "./Section"
 
 const Contact = (): JSX.Element => {
-  return (
-    <Section>
-      <></>
-    </Section>
-  )
+  return <></>
 }
 
 export default Contact

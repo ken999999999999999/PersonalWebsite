@@ -1,7 +1,11 @@
 import { ReactNode } from "react"
+
+export interface ICommonSection {
+  isCurrent: boolean
+  timeout: number
+}
 interface ISection {
   children: ReactNode
-  isLastSection?: boolean
 }
 
 const Section = ({ children }: ISection): JSX.Element => {

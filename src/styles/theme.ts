@@ -6,4 +6,15 @@ export default createTheme({
       default: "#eff2f5",
     },
   },
+  typography: {
+    fontFamily: [
+      "BlinkMacSystemFont",
+      "-apple-system",
+      "Segoe UI",
+      "Roboto",
+      "Helvetic",
+      "Arial",
+      "sans-serif",
+    ].join(","),
+  },
 })

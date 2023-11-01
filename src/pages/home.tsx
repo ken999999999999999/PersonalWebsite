@@ -3,10 +3,13 @@ import Education from "@/components/Education"
 import Experiences from "@/components/Experiences"
 import Header from "@/components/Header"
 import Introduction from "@/components/Introduction"
+import Section from "@/components/Section"
 import Skills from "@/components/Skills"
 import ReactFullpage from "@fullpage/react-fullpage"
 import { Container } from "@mui/material"
 import { useState } from "react"
+
+const transformTimeout = 2000
 
 const Home = () => {
   const pages = [
@@ -21,6 +24,8 @@ const Home = () => {
     moveTo: (link: string, index: number) => {},
   })
 
+  const [currentAnchor, setCurrentAnchor] = useState<string>("#introduction")
+
   return (
     <>
       <Header
@@ -32,15 +37,29 @@ const Home = () => {
           credits={{}}
           navigation
           anchors={pages.map((page) => page.link)}
+          onLeave={(_, destination, _direction, _trigger) =>
+            setCurrentAnchor(destination?.anchor + "")
+          }
           scrollingSpeed={1000} /* Options here */
           render={({ fullpageApi }) => {
             setCallback(fullpageApi)
+
             return (
               <ReactFullpage.Wrapper>
-                <Introduction />
-                <Skills />
+                <Introduction
+                  isCurrent={currentAnchor === "#introduction"}
+                  timeout={transformTimeout}
+                />
+
+                <Skills
+                  isCurrent={currentAnchor === "#skills"}
+                  timeout={transformTimeout}
+                />
+
                 <Education />
+
                 <Experiences />
+
                 <Contact />
               </ReactFullpage.Wrapper>
             )

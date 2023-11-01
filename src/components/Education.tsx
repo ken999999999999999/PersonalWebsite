@@ -3,11 +3,9 @@ import Section from "./Section"
 
 const Education = (): JSX.Element => {
   return (
-    <Section>
-      <List>
-        <ListItem></ListItem>
-      </List>
-    </Section>
+    <List>
+      <ListItem></ListItem>
+    </List>
   )
 }
 

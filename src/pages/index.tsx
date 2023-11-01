@@ -11,8 +11,8 @@ const Index = () => {
 
   useEffect(() => {
     loadingRef?.current.setSpeed(1.5)
-    setTimeout(() => setChecked(false), 6000)
-    setTimeout(() => router.push("/home"), 6500)
+    setTimeout(() => setChecked(false), 5000)
+    setTimeout(() => router.push("/home"), 5500)
   }, [router])
 
   return (
