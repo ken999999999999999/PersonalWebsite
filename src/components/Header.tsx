@@ -1,4 +1,5 @@
-import { AppBar, Button, Toolbar, Typography } from "@mui/material"
+import { Box, Button, Toolbar, Typography } from "@mui/material"
+import Link from "next/link"
 
 interface IHeader {
   onPageClick: (link: string, index: number) => void
@@ -7,20 +8,31 @@ interface IHeader {
 
 const Header = ({ onPageClick, pages }: IHeader): JSX.Element => {
   return (
-    <AppBar>
-      <Toolbar>
-        {pages.map((page, index) => (
-          <Button
-            data-menuanchor={page.link}
-            color="inherit"
-            key={page.link}
-            onClick={() => onPageClick(page.link, index)}
+    <header>
+      <Toolbar style={{ justifyContent: "space-between", zIndex: 100 }}>
+        <Link href="/">
+          <Typography
+            variant="h4"
+            color="primary"
+            fontWeight="bold"
+            fontFamily="cursive"
           >
-            <Typography component="div">{page.title}</Typography>
-          </Button>
-        ))}
+            Ken Lai
+          </Typography>
+        </Link>
+        <Box>
+          {pages.map((page, index) => (
+            <Button
+              key={page.link}
+              onClick={() => onPageClick(page.link, index)}
+              style={{ marginLeft: "10px" }}
+            >
+              <Typography component="div">{page.title}</Typography>
+            </Button>
+          ))}
+        </Box>
       </Toolbar>
-    </AppBar>
+    </header>
   )
 }
 
