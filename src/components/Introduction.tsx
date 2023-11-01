@@ -22,17 +22,17 @@ const Introduction = ({}: IIntroduction): JSX.Element => {
             technologies, as well as their capabilities and limitations in
             addressing specific business needs.
           </Typography>
-          <IconButton href="https://github.com/ken999999999999999" size="large">
-            <GitHubIcon />
+          <IconButton href="https://github.com/ken999999999999999">
+            <GitHubIcon style={{ fontSize: "50px" }} />
           </IconButton>
           <IconButton
             href="https://www.linkedin.com/in/wingchunlai"
             size="large"
           >
-            <LinkedInIcon />
+            <LinkedInIcon style={{ fontSize: "50px" }} />
           </IconButton>
           <IconButton size="large" href="mailto:kenlai201@hotmail.com">
-            <EmailIcon />
+            <EmailIcon style={{ fontSize: "50px" }} />
           </IconButton>
         </Grid>
         <Grid item sm={6} xs={12}>
