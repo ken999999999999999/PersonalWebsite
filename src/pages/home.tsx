@@ -6,7 +6,8 @@ import Introduction from "@/components/Introduction"
 import Skills from "@/components/Skills"
 import ReactFullpage from "@fullpage/react-fullpage"
 import { Container } from "@mui/material"
-import { useEffect, useState } from "react"
+import { useState } from "react"
+import { pageView } from "@/common/gtag"
 
 const transformTimeout = 2000
 
@@ -29,7 +30,10 @@ const Home = () => {
   return (
     <>
       <Header
-        onPageClick={(link, index) => callback?.moveTo(link, index)}
+        onPageClick={(link, index, title) => {
+          pageView(window.location.href, title)
+          callback?.moveTo(link, index)
+        }}
         pages={pages}
       />
       <Container maxWidth="lg">

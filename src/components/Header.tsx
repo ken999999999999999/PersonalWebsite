@@ -2,7 +2,7 @@ import { Box, Button, Toolbar, Typography } from "@mui/material"
 import Link from "next/link"
 
 interface IHeader {
-  onPageClick: (link: string, index: number) => void
+  onPageClick: (link: string, index: number, title: string) => void
   pages: { link: string; title: string }[]
 }
 
@@ -24,7 +24,7 @@ const Header = ({ onPageClick, pages }: IHeader): JSX.Element => {
           {pages.map((page, index) => (
             <Button
               key={page.link}
-              onClick={() => onPageClick(page.link, index)}
+              onClick={() => onPageClick(page.link, index, page.title)}
               style={{ marginLeft: "10px" }}
             >
               <Typography component="div">{page.title}</Typography>
