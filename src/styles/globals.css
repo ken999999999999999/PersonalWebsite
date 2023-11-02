@@ -10,7 +10,3 @@ a:-webkit-any-link {
 .fp-overflow::-webkit-scrollbar {
   display: none;
 }
-.fp-table {
-  padding-top: 5%;
-  justify-content: flex-start !important;
-}
