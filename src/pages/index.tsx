@@ -19,12 +19,14 @@ const Index = () => {
     <Zoom in={checked} timeout={1000}>
       <Box
         bgcolor="primary.light"
-        width="100%"
-        height="100%"
-        py="50px"
+        width="100vw"
+        height="100vh"
         borderRadius="10px"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
       >
-        <Box width="50%" height="50%" mx="auto">
+        <Box width="50%" height="50%" maxHeight="500px" maxWidth="500px">
           <Lottie lottieRef={loadingRef} animationData={Loading} />
         </Box>
       </Box>
