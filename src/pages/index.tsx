@@ -3,6 +3,7 @@ import Loading from "@/assets/Loading.json"
 import { Box, Zoom } from "@mui/material"
 import { useEffect, useRef, useState } from "react"
 import { useRouter } from "next/navigation"
+import Head from "@/components/Head"
 
 const Index = () => {
   const [checked, setChecked] = useState(true)
@@ -16,21 +17,24 @@ const Index = () => {
   }, [router])
 
   return (
-    <Zoom in={checked} timeout={1000}>
-      <Box
-        bgcolor="primary.light"
-        width="100vw"
-        height="100vh"
-        borderRadius="10px"
-        display="flex"
-        justifyContent="center"
-        alignItems="center"
-      >
-        <Box width="50%" height="50%" maxHeight="500px" maxWidth="500px">
-          <Lottie lottieRef={loadingRef} animationData={Loading} />
+    <>
+      <Head title="Welcome" />
+      <Zoom in={checked} timeout={1000}>
+        <Box
+          bgcolor="primary.light"
+          width="100vw"
+          height="100vh"
+          borderRadius="10px"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <Box width="50%" height="50%" maxHeight="500px" maxWidth="500px">
+            <Lottie lottieRef={loadingRef} animationData={Loading} />
+          </Box>
         </Box>
-      </Box>
-    </Zoom>
+      </Zoom>
+    </>
   )
 }
 
