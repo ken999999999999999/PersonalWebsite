@@ -1,5 +1,4 @@
 import { Box, Button, Toolbar, Typography } from "@mui/material"
-import Link from "next/link"
 
 interface IHeader {
   onPageClick: (link: string, index: number) => void
@@ -10,16 +9,14 @@ const Header = ({ onPageClick, pages }: IHeader): JSX.Element => {
   return (
     <header>
       <Toolbar style={{ justifyContent: "space-between", zIndex: 100 }}>
-        <Link href="/">
-          <Typography
-            variant="h4"
-            color="primary"
-            fontWeight="bold"
-            fontFamily="cursive"
-          >
-            Ken Lai
-          </Typography>
-        </Link>
+        <Typography
+          variant="h4"
+          color="primary"
+          fontWeight="bold"
+          fontFamily="cursive"
+        >
+          Ken Lai
+        </Typography>
         <Box>
           {pages.map((page, index) => (
             <Button

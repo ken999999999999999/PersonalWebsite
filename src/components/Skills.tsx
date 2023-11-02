@@ -146,7 +146,7 @@ const Skills = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
                   timeout={timeout}
                   style={{ transitionDuration: index * 1 + "s" }}
                 >
-                  <ListItem style={{ padding: 0 }} key={skillSummary}>
+                  <ListItem disableGutters disablePadding>
                     <ListItemIcon>
                       <Lottie
                         animationData={Star}
