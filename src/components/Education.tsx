@@ -20,7 +20,7 @@ const Education = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
   return (
     <Section>
       <Fade in={isCurrent} timeout={timeout}>
-        <Grid container>
+        <Grid container spacing={5}>
           <Grid item sm={6} xs={12}>
             <Title>Education & Certifications</Title>
             <Grow
@@ -45,16 +45,6 @@ const Education = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
                   }
                   subheader="The Hong Kong Polytechnic University"
                 />
-                <CardContent>
-                  <Typography variant="body1">
-                    The BSc (Hons) in Computer Science aims to equip graduates
-                    with solid computing foundations in areas such as
-                    programming, computational thinking and data structure to
-                    develop professional computer systems and software. Students
-                    develop strong problem-solving abilities and become highly
-                    competent in software development for virtually all sectors.
-                  </Typography>
-                </CardContent>
               </Card>
             </Grow>
 
@@ -79,17 +69,6 @@ const Education = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
                   }
                   subheader="Amazon Web Services (AWS)"
                 />
-                <CardContent>
-                  <Typography variant="body1">
-                    Earners of this certification have a comprehensive
-                    understanding of AWS services and technologies. They
-                    demonstrated the ability to build secure and robust
-                    solutions using architectural design principles based on
-                    customer requirements. Badge owners are able to
-                    strategically design well-architected distributed systems
-                    that are scalable, resilient, efficient, and fault-tolerant.
-                  </Typography>
-                </CardContent>
               </Card>
             </Grow>
           </Grid>

@@ -121,10 +121,12 @@ const Skills = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
   return (
     <Section>
       <Fade in={isCurrent} timeout={timeout}>
-        <Grid container>
-          <Grid item sm={6} xs={12}>
-            <Lottie animationData={Coding} />
-          </Grid>
+        <Grid container spacing={5}>
+          <Slide direction="right" in={isCurrent} timeout={timeout}>
+            <Grid item sm={6} xs={12}>
+              <Lottie animationData={Coding} />
+            </Grid>
+          </Slide>
           <Grid item sm={6} xs={12} pt={5}>
             <Title>My Skills</Title>
             {skillIcons.map((skillIcon) => (
@@ -140,11 +142,11 @@ const Skills = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
             <List>
               {skillSummaries.map((skillSummary, index) => (
                 <Slide
-                  direction="down"
+                  direction={"left"}
                   key={skillSummary}
                   in={isCurrent}
                   timeout={timeout}
-                  style={{ transitionDuration: index * 1 + "s" }}
+                  style={{ transitionDelay: index * 0.5 + "s" }}
                 >
                   <ListItem disableGutters disablePadding>
                     <ListItemIcon>

@@ -11,9 +11,9 @@ const Introduction = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
   return (
     <Section>
       <Fade in={isCurrent} timeout={timeout}>
-        <Grid container>
+        <Grid container spacing={5}>
           <Grid item sm={6} xs={12} pt={5}>
-            <Title>Hi all, I am Ken</Title>
+            <Title>Hi all, I&apos;m Ken</Title>
             <Typography
               variant="h4"
               paragraph

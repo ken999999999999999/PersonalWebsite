@@ -32,7 +32,7 @@ const Home = () => {
         onPageClick={(link, index) => callback?.moveTo(link, index)}
         pages={pages}
       />
-      <Container maxWidth="xl">
+      <Container maxWidth="lg">
         <ReactFullpage
           credits={{}}
           navigation
@@ -59,8 +59,14 @@ const Home = () => {
                   isCurrent={currentAnchor === "#education"}
                   timeout={transformTimeout}
                 />
-                <Experiences />
-                <Contact />
+                <Experiences
+                  isCurrent={currentAnchor === "#experiences"}
+                  timeout={transformTimeout}
+                />
+                <Contact
+                  isCurrent={currentAnchor === "#contact"}
+                  timeout={transformTimeout}
+                />
               </ReactFullpage.Wrapper>
             )
           }}
