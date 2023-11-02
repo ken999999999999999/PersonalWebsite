@@ -8,30 +8,39 @@ import ReactFullpage from "@fullpage/react-fullpage"
 import { Container } from "@mui/material"
 import { useState } from "react"
 import { pageView } from "@/common/gtag"
+import Head from "@/components/Head"
+
+interface IPage {
+  link: string
+  title: string
+}
 
 const transformTimeout = 2000
 
-const Home = () => {
-  const pages = [
-    { link: "#introduction", title: "Who am I?" },
-    { link: "#skills", title: "Skills" },
-    { link: "#education", title: "Education & Certifications" },
-    { link: "#experiences", title: "Experiences" },
-    { link: "#contact", title: "Contact" },
-  ]
+const pages: IPage[] = [
+  { link: "#introduction", title: "Who am I?" },
+  { link: "#skills", title: "Skills" },
+  { link: "#education", title: "Education & Certifications" },
+  { link: "#experiences", title: "Experiences" },
+  { link: "#contact", title: "Contact" },
+]
 
+const Home = () => {
   const [callback, setCallback] = useState({
     moveTo: (link: string, index: number) => {},
     isUpdated: false,
   })
 
-  const [currentAnchor, setCurrentAnchor] = useState<string>("#introduction")
+  const [currentSection, setCurrentSection] = useState<IPage>({
+    link: "#introduction",
+    title: "Who am I?",
+  })
 
   return (
     <>
+      <Head title={currentSection.title} />
       <Header
-        onPageClick={(link, index, title) => {
-          pageView(window.location.href, title)
+        onPageClick={(link, index) => {
           callback?.moveTo(link, index)
         }}
         pages={pages}
@@ -42,9 +51,13 @@ const Home = () => {
           navigation
           menu="#header"
           anchors={pages.map((page) => page.link)}
-          onLeave={(_, destination, _direction, _trigger) =>
-            setCurrentAnchor(destination?.anchor + "")
-          }
+          onLeave={(_, destination, _direction, _trigger) => {
+            setCurrentSection({
+              link: destination?.anchor + "",
+              title: pages[destination?.index].title,
+            })
+            pageView(window.location.href, pages[destination?.index].title)
+          }}
           scrollingSpeed={1000} /* Options here */
           render={({ fullpageApi }) => {
             !callback.isUpdated &&
@@ -52,23 +65,23 @@ const Home = () => {
             return (
               <ReactFullpage.Wrapper>
                 <Introduction
-                  isCurrent={currentAnchor === "#introduction"}
+                  isCurrent={currentSection.link === "#introduction"}
                   timeout={transformTimeout}
                 />
                 <Skills
-                  isCurrent={currentAnchor === "#skills"}
+                  isCurrent={currentSection.link === "#skills"}
                   timeout={transformTimeout}
                 />
                 <Education
-                  isCurrent={currentAnchor === "#education"}
+                  isCurrent={currentSection.link === "#education"}
                   timeout={transformTimeout}
                 />
                 <Experiences
-                  isCurrent={currentAnchor === "#experiences"}
+                  isCurrent={currentSection.link === "#experiences"}
                   timeout={transformTimeout}
                 />
                 <Contact
-                  isCurrent={currentAnchor === "#contact"}
+                  isCurrent={currentSection.link === "#contact"}
                   timeout={transformTimeout}
                 />
               </ReactFullpage.Wrapper>

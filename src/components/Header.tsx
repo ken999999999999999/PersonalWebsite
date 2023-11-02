@@ -1,7 +1,5 @@
 import { Box, Button, Toolbar, Typography } from "@mui/material"
 import Link from "next/link"
-import Head from "./Head"
-import { useState } from "react"
 
 interface IHeader {
   onPageClick: (link: string, index: number, title: string) => void
@@ -9,11 +7,8 @@ interface IHeader {
 }
 
 const Header = ({ onPageClick, pages }: IHeader): JSX.Element => {
-  const [title, setTitle] = useState("Who am I?")
-
   return (
     <header>
-      <Head title={title} />
       <Toolbar style={{ justifyContent: "space-between", zIndex: 100 }}>
         <Link href="/">
           <Typography
@@ -29,10 +24,7 @@ const Header = ({ onPageClick, pages }: IHeader): JSX.Element => {
           {pages.map((page, index) => (
             <Button
               key={page.link}
-              onClick={() => {
-                setTitle(page.title)
-                onPageClick(page.link, index, page.title)
-              }}
+              onClick={() => onPageClick(page.link, index, page.title)}
               style={{ marginLeft: "10px" }}
             >
               <Typography component="div">{page.title}</Typography>

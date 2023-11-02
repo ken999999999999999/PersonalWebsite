@@ -1,6 +1,6 @@
 import Lottie from "lottie-react"
 import Loading from "@/assets/Loading.json"
-import { Box, Zoom } from "@mui/material"
+import { Box, Typography, Zoom } from "@mui/material"
 import { useEffect, useRef, useState } from "react"
 import { useRouter } from "next/navigation"
 import Head from "@/components/Head"
@@ -12,8 +12,8 @@ const Index = () => {
 
   useEffect(() => {
     loadingRef?.current.setSpeed(1.5)
-    setTimeout(() => setChecked(false), 5000)
-    setTimeout(() => router.push("/home"), 5500)
+    setTimeout(() => setChecked(false), 4000)
+    setTimeout(() => router.push("/home"), 4500)
   }, [router])
 
   return (
@@ -29,7 +29,18 @@ const Index = () => {
           justifyContent="center"
           alignItems="center"
         >
+          <Box></Box>
+
           <Box width="50%" height="50%" maxHeight="500px" maxWidth="500px">
+            <Typography
+              color="white"
+              variant="h1"
+              textAlign="center"
+              fontFamily="cursive"
+              fontWeight="200"
+            >
+              Welcome!
+            </Typography>
             <Lottie lottieRef={loadingRef} animationData={Loading} />
           </Box>
         </Box>
