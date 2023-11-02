@@ -1,9 +1,19 @@
-import { Box, Divider, Fade, Zoom } from "@mui/material"
+import {
+  Box,
+  Fade,
+  Step,
+  StepContent,
+  StepLabel,
+  Stepper,
+  Zoom,
+} from "@mui/material"
 import Section, { ICommonSection } from "./Section"
 import Title from "./Title"
 import React from "react"
 import ExperienceCard from "./ExperienceCard"
-
+import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord"
+import Dot from "@/assets/Dot.json"
+import Lottie from "lottie-react"
 const works = [
   {
     company: "Stacktics Inc.",
@@ -55,20 +65,32 @@ const Experiences = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
       <Fade in={isCurrent} timeout={timeout}>
         <Box>
           <Title textAlign="center">Professional Experiences</Title>
-          {works.map((work, index) => (
-            <React.Fragment key={`work${index}`}>
+          <Stepper orientation="vertical">
+            {works.map((work, index) => (
               <Zoom
+                key={`work${index}`}
                 in={isCurrent}
                 timeout={timeout}
                 style={{ transitionDelay: index * 100 + "ms" }}
               >
-                <Box>
-                  <ExperienceCard {...work} />
-                  <Divider style={{ margin: "20px 0px" }} />
-                </Box>
+                <Step active>
+                  <StepLabel
+                    icon={
+                      <Lottie
+                        style={{ height: "20px", width: "20px" }}
+                        animationData={Dot}
+                      />
+                    }
+                  >
+                    {work.period}
+                  </StepLabel>
+                  <StepContent>
+                    <ExperienceCard {...work} />
+                  </StepContent>
+                </Step>
               </Zoom>
-            </React.Fragment>
-          ))}
+            ))}
+          </Stepper>
         </Box>
       </Fade>
     </Section>

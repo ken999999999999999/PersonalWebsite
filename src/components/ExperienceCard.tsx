@@ -4,45 +4,29 @@ import {
   CardHeader,
   Collapse,
   IconButton,
-  Stack,
   Typography,
 } from "@mui/material"
 import { useState } from "react"
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore"
 
 interface ICardCollapse {
-  period: string
   company: string
   jobTitle: string
   descriptions: string[]
 }
 
-const ExperienceCard = ({
-  period,
-  jobTitle,
-  company,
-  descriptions,
-}: ICardCollapse) => {
+const ExperienceCard = ({ jobTitle, company, descriptions }: ICardCollapse) => {
   const [isOpen, setIsOpen] = useState(false)
   return (
     <Card>
       <CardHeader
         action={
-          <Stack
-            direction="row"
-            alignItems="center"
-            justifyContent="space-between"
+          <IconButton
+            onClick={() => setIsOpen((prev) => !prev)}
+            style={{ transform: !isOpen ? "rotate(0deg)" : "rotate(180deg)" }}
           >
-            <Typography mr={1} variant="subtitle1">
-              {period}
-            </Typography>
-            <IconButton
-              onClick={() => setIsOpen((prev) => !prev)}
-              style={{ transform: !isOpen ? "rotate(0deg)" : "rotate(180deg)" }}
-            >
-              <ExpandMoreIcon />
-            </IconButton>
-          </Stack>
+            <ExpandMoreIcon />
+          </IconButton>
         }
         title={
           <Typography variant="subtitle1" fontWeight="bold">
