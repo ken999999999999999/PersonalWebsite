@@ -66,7 +66,7 @@ const Home = () => {
               link: destination?.anchor + "",
               title: pages[destination?.index].title,
             })
-            pageView(window.location.href, pages[destination?.index].title)
+            pageView(pages[destination?.index].title)
           }}
           afterLoad={(_, destination) =>
             afterFirstLoad(destination.anchor + "", destination.index)
