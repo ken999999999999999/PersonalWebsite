@@ -11,11 +11,15 @@ const Contact = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
   return (
     <Section>
       <Fade in={isCurrent} timeout={timeout}>
-        <Grid container spacing={5}>
-          <Grid item sm={6} xs={12}>
+        <Grid
+          container
+          spacing={5}
+          direction={{ md: "row", xs: "column-reverse" }}
+        >
+          <Grid item md={6} xs={12}>
             <Lottie animationData={Email} />
           </Grid>
-          <Grid item sm={6} xs={12} pt={5}>
+          <Grid item md={6} xs={12} pt={5}>
             <Title>Contact Me</Title>
             <Typography
               variant="h4"

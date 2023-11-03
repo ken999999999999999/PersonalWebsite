@@ -43,8 +43,8 @@ const works = [
     descriptions: [
       "- Collaborated with development members from the offshore team to develop and maintain 3+ big-scale projects",
       "- Migrated a top tier property management organization's annual appraisal (5000+ employees) from paper to online web application by using TypeScript, ReactJS and retrieving Microsoft SQL Server data, which reduced 50% manual work of the HR department",
-      "- Designed and developed a responsive multilingual assessment platform with Ant-Design for an international HR company which can be used in all browsers and devices",
-      "- Designed and provided RESTful APIs and 30+ data models with C# backend using ASP.Net Core for retrieving and storing various data in Microsoft SQL Server for a smart social service system of top tier non-governmental organization, which serve 1,000,000+ head counts per year",
+      "- Designed and developed a responsive multilingual assesmdent platform with Ant-Design for an international HR company which can be used in all browsers and devices",
+      "- Designed and provided RESTful APIs and 30+ data models with C# backend using ASP.Net Core for retrieving and storing various data in Microsoft SQL Server for a mdart social service system of top tier non-governmental organization, which serve 1,000,000+ head counts per year",
       "- Built multiple choice scanner and test grader for 1000+ performance appraisal forms detection for a top tier property management organization's annual appraisal along with Python and OpenCV",
       "- Configured CI/CD with Bitbucket Pipelines for deploying web application to Azure, which led to a 30% boost in deployment efficiency",
     ],

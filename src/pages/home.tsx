@@ -61,13 +61,12 @@ const Home = () => {
           credits={{}}
           navigation
           anchors={pages.map((page) => page.link)}
-          autoScrolling
           onLeave={(_, destination, _direction, _trigger) => {
             setCurrentSection({
               link: destination?.anchor + "",
               title: pages[destination?.index].title,
             })
-            // pageView(window.location.href, pages[destination?.index].title)
+            pageView(window.location.href, pages[destination?.index].title)
           }}
           afterLoad={(_, destination) =>
             afterFirstLoad(destination.anchor + "", destination.index)

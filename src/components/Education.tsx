@@ -21,7 +21,7 @@ const Education = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
     <Section>
       <Fade in={isCurrent} timeout={timeout}>
         <Grid container spacing={5}>
-          <Grid item sm={6} xs={12}>
+          <Grid item md={6} xs={12}>
             <Title>Education & Certifications</Title>
             <Grow
               in={isCurrent}
@@ -72,7 +72,7 @@ const Education = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
               </Card>
             </Grow>
           </Grid>
-          <Grid item sm={6} xs={12}>
+          <Grid item md={6} xs={12}>
             <Lottie animationData={EducationImg} />
           </Grid>
         </Grid>

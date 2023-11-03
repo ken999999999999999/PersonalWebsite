@@ -121,13 +121,17 @@ const Skills = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
   return (
     <Section>
       <Fade in={isCurrent} timeout={timeout}>
-        <Grid container spacing={5}>
+        <Grid
+          container
+          spacing={5}
+          direction={{ md: "row", xs: "column-reverse" }}
+        >
           <Slide direction="right" in={isCurrent} timeout={timeout}>
-            <Grid item sm={6} xs={12}>
+            <Grid item md={6} xs={12}>
               <Lottie animationData={Coding} />
             </Grid>
           </Slide>
-          <Grid item sm={6} xs={12} pt={5}>
+          <Grid item md={6} xs={12} pt={5}>
             <Title>My Skills</Title>
             {skillIcons.map((skillIcon) => (
               <a

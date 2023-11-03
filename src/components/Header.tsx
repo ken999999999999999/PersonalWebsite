@@ -1,5 +1,13 @@
-import { Box, Button, Toolbar, Typography } from "@mui/material"
+import {
+  Box,
+  Button,
+  IconButton,
+  Toolbar,
+  Typography,
+  useTheme,
+} from "@mui/material"
 import Link from "next/link"
+import useMediaQuery from "@mui/material/useMediaQuery"
 
 interface IHeader {
   onPageClick: (link: string, index: number, title: string) => void
@@ -7,6 +15,9 @@ interface IHeader {
 }
 
 const Header = ({ onPageClick, pages }: IHeader): JSX.Element => {
+  const theme = useTheme()
+  const greaterThenMd = useMediaQuery(theme.breakpoints.up("md"))
+
   return (
     <header>
       <Toolbar style={{ justifyContent: "space-between", zIndex: 100 }}>
@@ -20,17 +31,21 @@ const Header = ({ onPageClick, pages }: IHeader): JSX.Element => {
             Ken Lai
           </Typography>
         </Link>
-        <Box>
-          {pages.map((page, index) => (
-            <Button
-              key={page.link}
-              onClick={() => onPageClick(page.link, index, page.title)}
-              style={{ marginLeft: "10px" }}
-            >
-              <Typography component="div">{page.title}</Typography>
-            </Button>
-          ))}
-        </Box>
+        {greaterThenMd ? (
+          <Box>
+            {pages.map((page, index) => (
+              <Button
+                key={page.link}
+                onClick={() => onPageClick(page.link, index, page.title)}
+                style={{ marginLeft: "10px" }}
+              >
+                <Typography component="div">{page.title}</Typography>
+              </Button>
+            ))}
+          </Box>
+        ) : (
+          <IconButton></IconButton>
+        )}
       </Toolbar>
     </header>
   )

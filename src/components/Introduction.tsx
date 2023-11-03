@@ -12,7 +12,7 @@ const Introduction = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
     <Section>
       <Fade in={isCurrent} timeout={timeout}>
         <Grid container spacing={5}>
-          <Grid item sm={6} xs={12} pt={5}>
+          <Grid item md={6} xs={12} pt={5}>
             <Title>Hi all, I&apos;m Ken</Title>
             <Typography
               variant="h4"
@@ -45,7 +45,7 @@ const Introduction = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
               <EmailIcon style={{ fontSize: "50px" }} />
             </IconButton>
           </Grid>
-          <Grid item sm={6} xs={12}>
+          <Grid item md={6} xs={12}>
             <Lottie animationData={Wavehand} />
           </Grid>
         </Grid>
