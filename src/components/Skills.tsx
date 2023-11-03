@@ -123,7 +123,7 @@ const Skills = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
       <Fade in={isCurrent} timeout={timeout}>
         <Grid
           container
-          spacing={5}
+          columnSpacing={5}
           direction={{ md: "row", xs: "column-reverse" }}
         >
           <Slide direction="right" in={isCurrent} timeout={timeout}>

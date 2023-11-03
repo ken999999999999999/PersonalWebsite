@@ -13,7 +13,7 @@ const Contact = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
       <Fade in={isCurrent} timeout={timeout}>
         <Grid
           container
-          spacing={5}
+          columnSpacing={5}
           direction={{ md: "row", xs: "column-reverse" }}
         >
           <Grid item md={6} xs={12}>
