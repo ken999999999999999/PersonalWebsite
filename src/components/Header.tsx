@@ -8,6 +8,7 @@ import {
 } from "@mui/material"
 import Link from "next/link"
 import useMediaQuery from "@mui/material/useMediaQuery"
+import Drawer from "./Drawer"
 
 interface IHeader {
   onPageClick: (link: string, index: number, title: string) => void
@@ -44,7 +45,7 @@ const Header = ({ onPageClick, pages }: IHeader): JSX.Element => {
             ))}
           </Box>
         ) : (
-          <IconButton></IconButton>
+          <Drawer pages={pages} onPageClick={onPageClick} />
         )}
       </Toolbar>
     </header>
