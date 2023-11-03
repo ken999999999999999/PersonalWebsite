@@ -63,7 +63,7 @@ const Experiences = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
   return (
     <Section>
       <Fade in={isCurrent} timeout={timeout}>
-        <Box>
+        <Box mb="20%">
           <Title textAlign="center">Professional Experiences</Title>
           <Stepper orientation="vertical">
             {works.map((work, index) => (
