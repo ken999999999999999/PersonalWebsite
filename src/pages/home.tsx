@@ -6,7 +6,7 @@ import Introduction from "@/components/Introduction"
 import Skills from "@/components/Skills"
 import ReactFullpage from "@fullpage/react-fullpage"
 import { Container } from "@mui/material"
-import { useState } from "react"
+import { useCallback, useState } from "react"
 import { pageView } from "@/common/gtag"
 import Head from "@/components/Head"
 
@@ -36,6 +36,17 @@ const Home = () => {
     title: "Who am I?",
   })
 
+  const afterFirstLoad = useCallback(
+    (anchor: string, index: number) => {
+      if (anchor !== currentSection.link)
+        setCurrentSection({
+          link: anchor + "",
+          title: pages[index].title,
+        })
+    },
+    [currentSection]
+  )
+
   return (
     <>
       <Head title={currentSection.title} />
@@ -49,16 +60,18 @@ const Home = () => {
         <ReactFullpage
           credits={{}}
           navigation
-          menu="#header"
           anchors={pages.map((page) => page.link)}
+          autoScrolling
           onLeave={(_, destination, _direction, _trigger) => {
             setCurrentSection({
               link: destination?.anchor + "",
               title: pages[destination?.index].title,
             })
-            pageView(window.location.href, pages[destination?.index].title)
+            // pageView(window.location.href, pages[destination?.index].title)
           }}
-          scrollingSpeed={1000} /* Options here */
+          afterLoad={(_, destination) =>
+            afterFirstLoad(destination.anchor + "", destination.index)
+          }
           render={({ fullpageApi }) => {
             !callback.isUpdated &&
               setCallback({ ...fullpageApi, isUpdated: true })
