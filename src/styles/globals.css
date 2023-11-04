@@ -3,6 +3,7 @@ a:-webkit-any-link {
 }
 
 .fp-overflow {
+  overflow-x: hidden;
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }

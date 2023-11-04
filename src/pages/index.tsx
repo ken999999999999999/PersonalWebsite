@@ -29,7 +29,7 @@ const Index = () => {
           justifyContent="center"
           alignItems="center"
         >
-          <Box width="50%" height="50%" maxHeight="500px" maxWidth="500px">
+          <Box maxHeight="500px" maxWidth="500px">
             <Typography
               color="white"
               variant="h1"
