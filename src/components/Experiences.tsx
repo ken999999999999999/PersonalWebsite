@@ -29,7 +29,7 @@ const works = [
   {
     company: "Mouxidea Limited",
     jobTitle: "Freelance Developer",
-    period: "March 2023 - Sep 2023",
+    period: "March 2023 - Jun 2023",
     descriptions: [
       "- Integrated various workflow platforms with the current system and implemented workflow management with OutSystems",
       "- Designed and managed expense reimbursement processes with Business Process Technology and integrate them into applications",
