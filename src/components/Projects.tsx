@@ -20,6 +20,7 @@ import LanguageIcon from "@mui/icons-material/Language"
 import kanbanBoardReactImg from "@/assets/Kanban-board-react.png"
 import vueMapImg from "@/assets/vue-map.png"
 import contractIOImg from "@/assets/contractIO.png"
+import { viewProject } from "@/common/gtag"
 
 const projects = [
   {
@@ -124,11 +125,21 @@ const Projects = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
                   ))}
                 </CardContent>
                 <CardActions>
-                  <IconButton href={project.githubUrl}>
+                  <IconButton
+                    onClick={() => {
+                      viewProject("GitHub", project.title)
+                      window.open(project.githubUrl)
+                    }}
+                  >
                     <GitHubIcon />
                   </IconButton>
                   {project.website && (
-                    <IconButton href={project.website}>
+                    <IconButton
+                      onClick={() => {
+                        viewProject("WebSite", project.title)
+                        window.open(project.website)
+                      }}
+                    >
                       <LanguageIcon />
                     </IconButton>
                   )}
