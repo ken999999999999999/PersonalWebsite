@@ -9,6 +9,7 @@ import { Container } from "@mui/material"
 import { useCallback, useState } from "react"
 import { pageView } from "@/common/gtag"
 import Head from "@/components/Head"
+import Projects from "@/components/Projects"
 
 interface IPage {
   link: string
@@ -20,8 +21,9 @@ const transformTimeout = 2000
 const pages: IPage[] = [
   { link: "#introduction", title: "Who am I?" },
   { link: "#skills", title: "Skills" },
-  { link: "#education", title: "Education & Certifications" },
   { link: "#experiences", title: "Experiences" },
+  { link: "#projects", title: "Projects" },
+  { link: "#education", title: "Education & Certifications" },
   { link: "#contact", title: "Contact" },
 ]
 
@@ -84,12 +86,17 @@ const Home = () => {
                   isCurrent={currentSection.link === "#skills"}
                   timeout={transformTimeout}
                 />
-                <Education
-                  isCurrent={currentSection.link === "#education"}
-                  timeout={transformTimeout}
-                />
                 <Experiences
                   isCurrent={currentSection.link === "#experiences"}
+                  timeout={transformTimeout}
+                />
+                <Projects
+                  isCurrent={currentSection.link === "#projects"}
+                  timeout={transformTimeout}
+                />
+
+                <Education
+                  isCurrent={currentSection.link === "#education"}
                   timeout={transformTimeout}
                 />
                 <Contact
