@@ -19,6 +19,7 @@ import GitHubIcon from "@mui/icons-material/GitHub"
 import LanguageIcon from "@mui/icons-material/Language"
 import kanbanBoardReactImg from "@/assets/Kanban-board-react.png"
 import vueMapImg from "@/assets/vue-map.png"
+import contractIOImg from "@/assets/contractIO.png"
 
 const projects = [
   {
@@ -56,7 +57,7 @@ const projects = [
       "Contract.IO provides a platform to help people create, customize and manage their contracts.",
     githubUrl: "https://github.com/ken999999999999999/ContractdocIO",
     website: "",
-    image: facebookCloneImg,
+    image: contractIOImg,
     tags: [
       "React",
       "ASP.NET Core",
@@ -74,7 +75,7 @@ const projects = [
     tags: ["React", "Typescript", "MUI"],
   },
   {
-    title: "my-vue-map",
+    title: "My-Vue-Map",
     descriptions: "A map built with Vue.js, Javascript and Naive-ui",
     githubUrl: "https://github.com/ken999999999999999/my-vue-map",
     website: "https://ken999999999999999.github.io/my-vue-map/",
@@ -96,15 +97,12 @@ const Projects = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
               timeout={timeout}
               style={{ transitionDelay: isCurrent ? index * 0.5 + "s" : "0s" }}
             >
-              <Card>
+              <Card style={{ height: "490px" }}>
                 <CardMedia>
                   <Image
-                    width={380}
-                    height={220}
+                    style={{ width: "380px", height: "220px" }}
                     src={project.image}
                     alt={project.title}
-                    layout="responsive"
-                    loading="lazy"
                   />
                 </CardMedia>
                 <CardContent>
