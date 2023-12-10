@@ -98,7 +98,7 @@ const Projects = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
               timeout={timeout}
               style={{ transitionDelay: isCurrent ? index * 0.5 + "s" : "0s" }}
             >
-              <Card style={{ height: "490px" }}>
+              <Card>
                 <CardMedia>
                   <Image
                     style={{ width: "380px", height: "220px" }}
@@ -106,7 +106,7 @@ const Projects = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
                     alt={project.title}
                   />
                 </CardMedia>
-                <CardContent>
+                <CardContent style={{ height: "200px" }}>
                   <Typography gutterBottom variant="h5" component="div">
                     {project.title}
                   </Typography>
