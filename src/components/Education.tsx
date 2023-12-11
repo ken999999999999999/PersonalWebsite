@@ -15,6 +15,7 @@ import EducationImg from "@/assets/Education.json"
 import PolyLogo from "@/assets/PolyU.png"
 import Image from "next/image"
 import AWS from "@/assets/AWS.png"
+import Cantek from "@/assets/cantek.png"
 
 const Education = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
   return (
@@ -64,7 +65,32 @@ const Education = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
                   }
                   title={
                     <Typography variant="subtitle1" fontWeight="bold">
-                      AWS Certified Solutions Architect - Associate
+                      Web Development Training
+                    </Typography>
+                  }
+                  subheader="Amazon Web Services (AWS)"
+                />
+              </Card>
+            </Grow>
+            <Divider style={{ margin: "20px 0px" }} />
+            <Grow
+              in={isCurrent}
+              timeout={timeout}
+              style={{ transitionDelay: "100ms" }}
+            >
+              <Card>
+                <CardHeader
+                  avatar={
+                    <Image width={50} height={50} src={Cantek} alt="Cantek" />
+                  }
+                  action={
+                    <Typography mr={1} variant="subtitle1">
+                      Nov 2023 - Dec 2023
+                    </Typography>
+                  }
+                  title={
+                    <Typography variant="subtitle1" fontWeight="bold">
+                      Cantek Program
                     </Typography>
                   }
                   subheader="Amazon Web Services (AWS)"
