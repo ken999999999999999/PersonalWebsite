@@ -5,10 +5,3 @@ export const pageView = (title) => {
     page_title: title,
   })
 }
-
-export const viewProject = (type, title) => {
-  window?.gtag("event", "select_content", {
-    content_type: type,
-    content_id: title,
-  })
-}

@@ -20,7 +20,7 @@ import LanguageIcon from "@mui/icons-material/Language"
 import kanbanBoardReactImg from "@/assets/Kanban-board-react.png"
 import vueMapImg from "@/assets/vue-map.png"
 import contractIOImg from "@/assets/contractIO.png"
-import { viewProject } from "@/common/gtag"
+import { pageView } from "@/common/gtag"
 
 const projects = [
   {
@@ -127,7 +127,7 @@ const Projects = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
                 <CardActions>
                   <IconButton
                     onClick={() => {
-                      viewProject("GitHub", project.title)
+                      pageView(`GitHub - ${project.title}`)
                       window.open(project.githubUrl)
                     }}
                   >
@@ -136,7 +136,7 @@ const Projects = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
                   {project.website && (
                     <IconButton
                       onClick={() => {
-                        viewProject("WebSite", project.title)
+                        pageView(`WebSite - ${project.title}`)
                         window.open(project.website)
                       }}
                     >
