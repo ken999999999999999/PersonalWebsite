@@ -19,10 +19,12 @@ const Introduction = ({ isCurrent, timeout }: ICommonSection): JSX.Element => {
               paragraph
               style={{ fontWeight: "lighter" }}
             >
-              With over 3 years of hands-on experience in ERP system
-              development, I possess a strong understanding of both frontend and
-              backend technologies, as well as their capabilities and
-              limitations in addressing specific business needs.
+              Software Engineer with over 3 years of experience working across
+              the full-stack of software development. I possess a strong
+              understanding of both front-end (React.js, TypeScript, JavaScript)
+              and back-end (C#, Python, .Net Core, FastAPI) technologies, as
+              well as their capabilities and limitations in addressing specific
+              business needs.
             </Typography>
             <IconButton
               color="primary"
